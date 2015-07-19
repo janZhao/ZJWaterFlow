@@ -10,6 +10,12 @@
 #import "ZJWaterflowView.h"
 #import "ZJWaterflowViewCell.h"
 
+// 颜色
+#define ZJColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+#define ZJColorRGBA(r, g, b, a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:a]
+// 随机色
+#define ZJRandomColor ZJColor(arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256))
+
 @interface ViewController ()<ZJWaterflowViewDataSource, ZJWaterflowViewDelegate>
 
 @end
@@ -41,7 +47,7 @@
 -(ZJWaterflowViewCell *)waterflowView:(ZJWaterflowView *)waterflowView cellAtIndex:(NSUInteger)index
 {
     ZJWaterflowViewCell *cell = [[ZJWaterflowViewCell alloc]init];
-    
+    cell.backgroundColor = ZJRandomColor;
     return cell;
 }
 
@@ -72,6 +78,7 @@
         default:return 10;
     }
 }
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

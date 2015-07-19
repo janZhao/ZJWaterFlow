@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UIView+Extension.h"
 
 typedef enum {
     ZJWaterflowViewMarginTop,
@@ -71,5 +72,15 @@ typedef enum {
  *  代理
  */
 @property (nonatomic, weak) id<ZJWaterflowViewDelegate> delegate;
+
+/**
+ *  刷新数据（只要调用这个方法，会重新向数据源和代理发送请求，请求数据）
+ */
+- (void)reloadData;
+
+/**
+ *  根据标识去缓存池查找可循环利用的cell
+ */
+- (id)dequeueReusableCellWithIdentifier:(NSString *)identifier;
 
 @end

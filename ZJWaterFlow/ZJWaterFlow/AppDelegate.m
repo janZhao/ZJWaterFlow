@@ -18,8 +18,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    //UITableView *tableView;
-    //tableView.dataSource
+    UITableView *tableView;
+    tableView.dataSource
     return YES;
 }
 

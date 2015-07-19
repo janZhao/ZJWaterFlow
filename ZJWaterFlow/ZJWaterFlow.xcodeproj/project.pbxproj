@@ -16,6 +16,7 @@
 		0635CB441B5BB140003C7C3D /* ZJWaterFlowTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0635CB431B5BB140003C7C3D /* ZJWaterFlowTests.m */; };
 		0635CB4F1B5BB238003C7C3D /* ZJWaterflowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0635CB4E1B5BB238003C7C3D /* ZJWaterflowView.m */; };
 		0635CB521B5BB392003C7C3D /* ZJWaterflowViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0635CB511B5BB392003C7C3D /* ZJWaterflowViewCell.m */; };
+		0635CB561B5BC3A3003C7C3D /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 0635CB551B5BC3A3003C7C3D /* UIView+Extension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,8 @@
 		0635CB4E1B5BB238003C7C3D /* ZJWaterflowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJWaterflowView.m; sourceTree = "<group>"; };
 		0635CB501B5BB392003C7C3D /* ZJWaterflowViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJWaterflowViewCell.h; sourceTree = "<group>"; };
 		0635CB511B5BB392003C7C3D /* ZJWaterflowViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJWaterflowViewCell.m; sourceTree = "<group>"; };
+		0635CB541B5BC3A3003C7C3D /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		0635CB551B5BC3A3003C7C3D /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +132,8 @@
 		0635CB531B5BB6FA003C7C3D /* WaterflowView */ = {
 			isa = PBXGroup;
 			children = (
+				0635CB541B5BC3A3003C7C3D /* UIView+Extension.h */,
+				0635CB551B5BC3A3003C7C3D /* UIView+Extension.m */,
 				0635CB501B5BB392003C7C3D /* ZJWaterflowViewCell.h */,
 				0635CB511B5BB392003C7C3D /* ZJWaterflowViewCell.m */,
 				0635CB4D1B5BB238003C7C3D /* ZJWaterflowView.h */,
@@ -237,6 +242,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0635CB561B5BC3A3003C7C3D /* UIView+Extension.m in Sources */,
 				0635CB521B5BB392003C7C3D /* ZJWaterflowViewCell.m in Sources */,
 				0635CB301B5BB140003C7C3D /* ViewController.m in Sources */,
 				0635CB2D1B5BB140003C7C3D /* AppDelegate.m in Sources */,
