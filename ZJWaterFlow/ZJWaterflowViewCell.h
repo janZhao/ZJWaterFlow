@@ -10,4 +10,10 @@
 
 @interface ZJWaterflowViewCell : UIView
 
+
+/**
+ *  重用标志符
+ */
+@property (nonatomic, copy) NSString *identifier;
+
 @end

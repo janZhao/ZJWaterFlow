@@ -52,7 +52,7 @@ typedef enum {
 /**
  *  选择Cell
  */
--(CGFloat)waterflowView:(ZJWaterflowView *)waterflowView didSelectedAtIndex:(NSUInteger)index;
+-(void)waterflowView:(ZJWaterflowView *)waterflowView didSelectedAtIndex:(NSUInteger)index;
 
 /**
  *  Cell的间距

@@ -27,16 +27,18 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     ZJWaterflowView *waterflowView = [[ZJWaterflowView alloc]init];
+    waterflowView.frame = self.view.bounds;
     waterflowView.dataSource = self;
     waterflowView.delegate = self;
-    waterflowView.frame = self.view.bounds;
     [self.view addSubview:waterflowView];
+    
+    [waterflowView reloadData];
 }
 
 #pragma mark datasource
 -(NSUInteger)numberOfCellsInWaterflowView:(ZJWaterflowView *)waterflowView
 {
-    return 200;
+    return 50;
 }
 
 -(NSUInteger)numberOfColumnsInWaterflowView:(ZJWaterflowView *)waterflowView
@@ -46,8 +48,26 @@
 
 -(ZJWaterflowViewCell *)waterflowView:(ZJWaterflowView *)waterflowView cellAtIndex:(NSUInteger)index
 {
-    ZJWaterflowViewCell *cell = [[ZJWaterflowViewCell alloc]init];
-    cell.backgroundColor = ZJRandomColor;
+    static NSString *ID = @"ZJWaterflowViewCell";
+    ZJWaterflowViewCell *cell = [waterflowView dequeueReusableCellWithIdentifier:ID];
+    
+    if (cell == nil) {
+        cell = [[ZJWaterflowViewCell alloc] init];
+        cell.identifier = ID;
+        cell.backgroundColor = ZJRandomColor;
+        [cell addSubview:[UIButton buttonWithType:UIButtonTypeContactAdd]];
+        
+        UILabel *label = [[UILabel alloc] init];
+        label.tag = 10;
+        label.frame = CGRectMake(0, 0, 50, 20);
+        [cell addSubview:label];
+    }
+    
+    UILabel *label = (UILabel *)[cell viewWithTag:10];
+    label.text = [NSString stringWithFormat:@"%lu", (unsigned long)index];
+    
+    NSLog(@"%lu %p", (unsigned long)index, cell);
+    
     return cell;
 }
 
@@ -55,14 +75,10 @@
 -(CGFloat)waterflowView:(ZJWaterflowView *)waterflowView heightAtIndex:(NSUInteger)index
 {
     switch (index%3) {
-        case 0:return 70;
-            break;
-        case 1:return 90;
-            break;
+        case 0:return 110;
+        case 1:return 80;
         case 2:return 100;
-            break;
         default:return 110;
-            break;
     }
 }
 
@@ -77,6 +93,11 @@
             
         default:return 10;
     }
+}
+
+-(void)waterflowView:(ZJWaterflowView *)waterflowView didSelectedAtIndex:(NSUInteger)index
+{
+        NSLog(@"点击了第%lu个cell", (unsigned long)index);
 }
 
 - (void)didReceiveMemoryWarning {
