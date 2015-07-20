@@ -56,6 +56,20 @@
     return _reusableCells;
 }
 
+/**
+ *  cell的宽度
+ */
+- (CGFloat)cellWidth
+{
+    // 总列数
+    NSUInteger numberOfColumns = [self numberOfColumns];
+    CGFloat leftM = [self marginForType:ZJWaterflowViewMarginLeft];
+    CGFloat rightM = [self marginForType:ZJWaterflowViewMarginRight];
+    CGFloat columnM = [self marginForType:ZJWaterflowViewMarginColumn];
+    return (self.bounds.size.width - leftM - rightM - (numberOfColumns - 1) * columnM) / numberOfColumns;
+}
+
+
 -(void)reloadData
 {
     //Cell总数

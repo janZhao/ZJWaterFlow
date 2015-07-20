@@ -79,6 +79,11 @@ typedef enum {
 - (void)reloadData;
 
 /**
+ *  cell的宽度
+ */
+- (CGFloat)cellWidth;
+
+/**
  *  根据标识去缓存池查找可循环利用的cell
  */
 - (id)dequeueReusableCellWithIdentifier:(NSString *)identifier;
