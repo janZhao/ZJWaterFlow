@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "ZJWaterflowView.h"
 #import "ZJWaterflowViewCell.h"
+#import "ZJShopViewController.h"
 
 // 颜色
 #define ZJColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
@@ -97,7 +98,9 @@
 
 -(void)waterflowView:(ZJWaterflowView *)waterflowView didSelectedAtIndex:(NSUInteger)index
 {
-        NSLog(@"点击了第%lu个cell", (unsigned long)index);
+    NSLog(@"点击了第%lu个cell", (unsigned long)index);
+    ZJShopViewController *vc = [[ZJShopViewController alloc]init];
+    [self presentViewController:vc animated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {
