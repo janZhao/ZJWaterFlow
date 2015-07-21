@@ -101,6 +101,7 @@
     //Cell总数
     NSUInteger numberOfCells = [self.dataSource numberOfCellsInWaterflowView:self];
     
+    //Cell总共的列数
     NSUInteger numberOfColumns = [self numberOfColumns];
     
     // 间距
@@ -111,10 +112,10 @@
     CGFloat columnM = [self marginForType:ZJWaterflowViewMarginColumn];
     CGFloat rowM = [self marginForType:ZJWaterflowViewMarginRow];
     
-    //Cell的宽度
+    //Cell的宽度(瀑布流中所有的cell宽度都一样)
     CGFloat cellW = (self.width - leftM - rightM - (numberOfColumns - 1)*columnM)/numberOfColumns;
     
-    //用一个C语言数组存放 所有列最大的Y数值
+    //用一个C语言数组存放Cell所有列最大的Y的数值
     CGFloat maxYOfColumns[numberOfColumns];
     
     for (int i=0; i<numberOfColumns; i++) {
@@ -123,10 +124,10 @@
     
     for (int i=0; i<numberOfCells; i++) {
         
-        //Cell处在最短的那一列
+        //Cell处在最短的那一列 默认第0列
         NSUInteger cellColumn = 0;
         
-        //Cell所处最短那一列的最大Y值
+        //Cell所处最短那一列的最大Y值 默认第0列
         CGFloat maxYOfCellColumn = maxYOfColumns[cellColumn];
         
         for (int j=1; j<numberOfColumns; j++) {
